@@ -1,11 +1,13 @@
 <template>
-    <button class="g-button">
+    <button class="g-button" v-bind:class="`${icon}`">
         <slot></slot>
     </button>
 </template>
 
 <script>
-export default {};
+export default {
+    props: ['icon']
+};
 </script>
 
 
@@ -32,5 +34,10 @@ export default {};
 
 .g-button:focus {
     outline: none;
+}
+
+.fa-sliders-h:before {
+    font-size: 1em;
+    margin: 0.25em;
 }
 </style>
