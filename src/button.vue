@@ -15,12 +15,15 @@ export default {};
     height: 32px;
     padding: 0 1em;
     border-radius: 4px;
-    border: 1px solid #999;
+    border: 1px solid #777;
     background: #fff;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
 .g-button:hover {
     border-color: #666;
+    border: 1px solid #999;
 }
 
 .g-button:active {
