@@ -12,6 +12,9 @@ export default {
 
 
 <style>
+
+@import url(https://use.fontawesome.com/releases/v5.2.0/css/all.css);
+
 .g-button {
     font-size: 14px;
     height: 32px;
