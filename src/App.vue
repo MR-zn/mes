@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
     <router-view></router-view>
   </div>
 </template>
@@ -11,6 +11,7 @@ export default {
 }
 </script>
 
+<!--
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -21,3 +22,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+-->
