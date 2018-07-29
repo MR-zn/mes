@@ -1,5 +1,7 @@
 <template>
-    <button class="g-button" v-bind:class="[`${icon}`,{[`icon-${iconPosition}`]: true}]">
+    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
+        <span v-bind:class="`${icon}`" v-if=!loading></span>
+        <span class="fas fa-spinner" v-if=loading></span>
         <p>
             <slot></slot>
         </p>
@@ -10,15 +12,19 @@
 export default {
     props: {
         icon: {},
+        loading: {
+            type: Boolean,
+            default: true
+        },
         iconPosition: {
             type: String,
-            default: 'left',
-            validator (value) {
-                return value === 'left' || value === 'right'
+            default: "left",
+            validator(value) {
+                return value === "left" || value === "right";
             }
-        }
+        },
     }
-}
+};
 </script>
 
 
@@ -40,16 +46,16 @@ export default {
     vertical-align: middle;
 }
 
-.g-button:before {
+.g-button:before,span {
     order: 1;
     margin-right: 0.1em;
 }
 
-.g-button p {
+.g-button p,span {
     order: 2;
 }
 
-.icon-right:before {
+.icon-right:before,.icon-right span {
     order: 2;
     margin-right: 0;
     margin-left: 0.1em;
@@ -78,11 +84,15 @@ export default {
 }
 
 @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.fa-spinner:before {
+.fa-spinner {
     animation: spin 1s infinite linear;
 }
 </style>
