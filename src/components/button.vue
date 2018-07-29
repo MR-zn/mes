@@ -40,7 +40,7 @@ export default {
     vertical-align: middle;
 }
 
-.fa-sliders-h:before {
+.g-button:before {
     order: 1;
     margin-right: 0.1em;
 }
@@ -72,8 +72,17 @@ export default {
     outline: none;
 }
 
-.fa-sliders-h:before {
+.g-button:before {
     font-size: 1em;
     margin: 0.25em;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.fa-spinner:before {
+    animation: spin 1s infinite linear;
 }
 </style>
