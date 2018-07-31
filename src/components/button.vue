@@ -1,10 +1,7 @@
 <template>
     <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-        <span v-bind:class="`${icon}`" v-if=!loading></span>
+        <span v-bind:class="`${icon}`" v-if=loading></span>
         <span class="fas fa-spinner" v-if=loading></span>
-        <p>
-            <slot></slot>
-        </p>
     </button>
 </template>
 
