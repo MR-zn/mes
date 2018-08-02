@@ -1,6 +1,6 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-        <span v-bind:class="`${icon}`" v-if=loading></span>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}" @click="isLoading">
+        <span v-bind:class="`${icon}`" :loading="loading" v-if=!loading></span>
         <span class="fas fa-spinner" v-if=loading></span>
         <p>
             <slot></slot>
@@ -10,12 +10,11 @@
 
 <script>
 export default {
+    data(){
+        return {loading : false}
+    },
     props: {
         icon: {},
-        loading: {
-            type: Boolean,
-            default: true
-        },
         iconPosition: {
             type: String,
             default: "left",
@@ -23,6 +22,11 @@ export default {
                 return value === "left" || value === "right";
             }
         },
+    },
+    methods: {
+        isLoading (){
+            this.$emit('click', this.loading= !this.loading)
+        }
     }
 };
 </script>
@@ -42,8 +46,8 @@ export default {
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
-    align-items: center;
     vertical-align: middle;
+    align-items: center;
 }
 
 .g-button:before,span {
