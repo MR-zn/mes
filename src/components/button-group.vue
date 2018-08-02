@@ -32,6 +32,7 @@ export default {
     .g-button-group .g-button:first-child {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
+        margin-left: 0;
     }
 
     .g-button-group .g-button:last-child {
