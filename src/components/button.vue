@@ -45,9 +45,9 @@ export default {
     transition: all 0.2s;
     cursor: pointer;
     display: inline-flex;
+    align-items: center;
     justify-content: center;
     vertical-align: middle;
-    align-items: center;
 }
 
 .g-button:before,span {
